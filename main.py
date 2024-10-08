@@ -27,3 +27,7 @@ if (lst.landmark[5].y*100 - lst.landmark[8].y*100) > thresh:
     return cnt 
 
 cap = cv2.VideoCapture(0)
+
+drawing = mp.solutions.drawing_utils
+hands = mp.solutions.hands
+hand_obj = hands.Hands(max_num_hands=1)
