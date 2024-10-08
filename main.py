@@ -42,3 +42,10 @@ while True:
     res = hand_obj.process(cv2.cvtColor(frm, cv2.COLOR_BGR2RGB))
     if res.multi_hand_landmarks:
         hand_keyPoints = res.multi_hand_landmarks[0]
+
+        cnt = count_fingers(hand_keyPoints)
+
+        if not(prev==cnt):
+            if not(start_init):
+                start_time = time.time()
+                start_init = True
