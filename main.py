@@ -39,3 +39,5 @@ while True:
     end_time = time.time()
     _, frm = cap.read()
     frm = cv2.flip(frm, 1)
+
+     res = hand_obj.process(cv2.cvtColor(frm, cv2.COLOR_BGR2RGB))
