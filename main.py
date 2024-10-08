@@ -5,10 +5,9 @@ import time
 
 def count_fingers(lst):
     cnt = 0
-
-thresh = (lst.landmark[0].y*100 - lst.landmark[9].y*100)/2
-
-if (lst.landmark[5].y*100 - lst.landmark[8].y*100) > thresh:
+    
+    thresh = (lst.landmark[0].y*100 - lst.landmark[9].y*100)/2
+    if (lst.landmark[5].y*100 - lst.landmark[8].y*100) > thresh:
         cnt += 1
 
     if (lst.landmark[9].y*100 - lst.landmark[12].y*100) > thresh:
@@ -40,4 +39,6 @@ while True:
     _, frm = cap.read()
     frm = cv2.flip(frm, 1)
 
-     res = hand_obj.process(cv2.cvtColor(frm, cv2.COLOR_BGR2RGB))
+    res = hand_obj.process(cv2.cvtColor(frm, cv2.COLOR_BGR2RGB))
+    if res.multi_hand_landmarks:
+        hand_keyPoints = res.multi_hand_landmarks[0]
