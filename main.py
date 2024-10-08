@@ -49,7 +49,7 @@ while True:
             if not(start_init):
                 start_time = time.time()
                 start_init = True
-                
+
             elif (end_time-start_time) > 0.2:
                 if (cnt == 1):
                     pyautogui.press("right")
@@ -67,4 +67,8 @@ while True:
                     pyautogui.press("space")
 
                 prev = cnt
-                start_init = False    
+                start_init = False   
+
+        drawing.draw_landmarks(frm, hand_keyPoints, hands.HAND_CONNECTIONS)
+
+    cv2.imshow("window", frm) 
