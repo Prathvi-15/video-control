@@ -25,3 +25,5 @@ if (lst.landmark[5].y*100 - lst.landmark[8].y*100) > thresh:
 
 
     return cnt 
+
+cap = cv2.VideoCapture(0)
