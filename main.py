@@ -72,3 +72,8 @@ while True:
         drawing.draw_landmarks(frm, hand_keyPoints, hands.HAND_CONNECTIONS)
 
     cv2.imshow("window", frm) 
+
+    if cv2.waitKey(1) == 27:
+        cv2.destroyAllWindows()
+        cap.release()
+        break
